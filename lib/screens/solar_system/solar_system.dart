@@ -57,7 +57,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () async {
             final PlanetWidget newPlanet = await Navigator.push(
               context,
