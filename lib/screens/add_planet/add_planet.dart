@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 import '../../models/planet.dart';
-import '../../models/sun.dart';
 import '../solar_system/planet_widget.dart';
 
 class AddPlanetScreen extends StatefulWidget {

@@ -4,7 +4,6 @@ import 'package:solar_system/screens/solar_system/planet_widget.dart';
 
 import '../../models/planet.dart';
 import '../add_planet/add_planet.dart';
-import '../../models/sun.dart';
 
 class PlanetSystemScreen extends StatefulWidget {
   final String title;
@@ -39,12 +38,12 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         }
 
         planets = newPlanets;
+
         SunWidget.factor *= scaleFactor;
       }
     }
 
     return Scaffold(
-      backgroundColor: Colors.indigo,
       appBar: AppBar(
         title: Text(widget.title),
       ),

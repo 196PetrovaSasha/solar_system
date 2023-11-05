@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../models/sun.dart';
-
 class SunWidget extends StatelessWidget {
 
   final double initialSize = 70;
