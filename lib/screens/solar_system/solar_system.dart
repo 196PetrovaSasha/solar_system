@@ -21,6 +21,8 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
   double factor = 1;
   bool isChecked = false;
 
+  final sunInitRad = 70;
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -81,7 +83,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
               context,
               MaterialPageRoute(
                   builder: (context) =>  AddPlanetScreen(
-                        title: "", sunRad: factor * 70,
+                        title: "", sunRad: factor * sunInitRad,
                       )),
             );
             setState(() {

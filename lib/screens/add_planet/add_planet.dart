@@ -15,6 +15,9 @@ class AddPlanetScreen extends StatefulWidget {
 }
 
 class _AddPlanetScreenState extends State<AddPlanetScreen> {
+
+  final int secParser = 1000000;
+
   final _formKey = GlobalKey<FormState>();
   final _radiusController = TextEditingController();
   final _distanceController = TextEditingController();
@@ -102,7 +105,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
               radius: radius ,
               color: color,
               distance: distance,
-              rotationSpeed: (rotationSpeed * 1000000).toInt(),
+              rotationSpeed: (rotationSpeed * secParser).toInt(),
             );
             PlanetWidget newPlanet = PlanetWidget(planet: planet);
             Navigator.pop(context, newPlanet);
