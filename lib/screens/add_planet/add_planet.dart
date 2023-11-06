@@ -35,8 +35,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter radius';
-        } else if (double.tryParse(value) == null ||
-            double.parse(value) <= 0) {
+        } else if (double.tryParse(value) == null || double.parse(value) <= 0) {
           return 'Radius must be a positive integer number';
         }
         return null;
@@ -53,8 +52,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter distance';
-        } else if (double.tryParse(value) == null ||
-            double.parse(value) <= 0) {
+        } else if (double.tryParse(value) == null || double.parse(value) <= 0) {
           return 'Distance must be a positive integer number';
         }
         return null;
@@ -66,14 +64,12 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
     return TextFormField(
       controller: _rotationSpeedController,
       decoration: const InputDecoration(
-        labelText:
-        'Rotation Speed (time for a complete rotation sec)',
+        labelText: 'Rotation Speed (time for a complete rotation sec)',
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter rotation speed';
-        } else if (double.tryParse(value) == null ||
-            double.parse(value) <= 0) {
+        } else if (double.tryParse(value) == null || double.parse(value) <= 0) {
           return 'Rotation speed must be a positive double value';
         }
         return null;
@@ -88,8 +84,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           children: [
             Expanded(
                 child: MaterialPicker(
-                    pickerColor: currentColor,
-                    onColorChanged: changeColor))
+                    pickerColor: currentColor, onColorChanged: changeColor))
           ],
         ));
   }
@@ -100,10 +95,8 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
         if (_formKey.currentState!.validate()) {
           double radius = double.parse(_radiusController.text);
           Color color = currentColor;
-          double distance =
-          double.parse(_distanceController.text);
-          double rotationSpeed =
-          double.parse(_rotationSpeedController.text);
+          double distance = double.parse(_distanceController.text);
+          double rotationSpeed = double.parse(_rotationSpeedController.text);
 
           if (distance - radius > sun.initialSize * SunWidget.factor) {
             Planet planet = Planet(
@@ -115,14 +108,12 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
             PlanetWidget newPlanet = PlanetWidget(planet: planet);
             Navigator.pop(context, newPlanet);
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                    content: Text('Please correct distance, too small')));
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text('Please correct distance, too small')));
           }
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                  content: Text('Please correct the errors')));
+              const SnackBar(content: Text('Please correct the errors')));
         }
       },
       child: const Text('Add Planet'),

@@ -34,7 +34,8 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
                   radius: planet.planet.radius * scaleFactor,
                   color: planet.planet.color,
                   distance: planet.planet.distance * scaleFactor,
-                  rotationSpeed: (planet.planet.rotationSpeed * scaleFactor).toInt())));
+                  rotationSpeed:
+                      (planet.planet.rotationSpeed * scaleFactor).toInt())));
         }
 
         planets = newPlanets;
@@ -42,8 +43,8 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         SunWidget.factor *= scaleFactor;
       }
     }
-
     return Scaffold(
+      backgroundColor: Colors.black87,
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -51,7 +52,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            SunWidget(),
+            const SunWidget(),
             ...planets,
           ],
         ),

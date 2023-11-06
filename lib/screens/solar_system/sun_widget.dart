@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SunWidget extends StatelessWidget {
-
   final double initialSize = 70;
   static double factor = 1;
 

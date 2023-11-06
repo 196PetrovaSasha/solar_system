@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 
 class Planet {
-
   final double radius;
   final Color color;
   final double distance;

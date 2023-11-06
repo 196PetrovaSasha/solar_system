@@ -6,9 +6,7 @@ import 'package:solar_system/screens/solar_system/solar_system.dart';
 import 'models/planet.dart';
 
 void main() {
-  runApp(
-      const MyApp()
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Planet System',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: const PlanetSystemScreen(title: 'Planet System'),
     );

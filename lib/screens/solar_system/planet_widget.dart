@@ -49,7 +49,6 @@ class _PlanetWidgetState extends State<PlanetWidget>
               ),
             ),
           ],
-        )
-    );
+        ));
   }
 }
