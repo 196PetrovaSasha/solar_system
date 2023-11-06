@@ -34,7 +34,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
                   radius: planet.planet.radius * scaleFactor,
                   color: planet.planet.color,
                   distance: planet.planet.distance * scaleFactor,
-                  rotationSpeed: planet.planet.rotationSpeed)));
+                  rotationSpeed: (planet.planet.rotationSpeed * scaleFactor).toInt())));
         }
 
         planets = newPlanets;

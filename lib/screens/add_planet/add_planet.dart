@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:solar_system/screens/solar_system/sun_widget.dart';
 
 import '../../models/planet.dart';
 import '../solar_system/planet_widget.dart';
@@ -21,6 +22,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
 
   Color currentColor = Colors.amber;
   List<Color> currentColors = [Colors.yellow, Colors.green];
+  SunWidget sun = const SunWidget();
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -70,8 +72,8 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter rotation speed';
-        } else if (int.tryParse(value) == null ||
-            int.parse(value) <= 0) {
+        } else if (double.tryParse(value) == null ||
+            double.parse(value) <= 0) {
           return 'Rotation speed must be a positive integer';
         }
         return null;
@@ -100,17 +102,23 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           Color color = currentColor;
           double distance =
           double.parse(_distanceController.text);
-          int rotationSpeed =
-          int.parse(_rotationSpeedController.text);
+          double rotationSpeed =
+          double.parse(_rotationSpeedController.text);
 
-          Planet planet = Planet(
-            radius: radius,
-            color: color,
-            distance: distance,
-            rotationSpeed: rotationSpeed,
-          );
-          PlanetWidget newPlanet = PlanetWidget(planet: planet);
-          Navigator.pop(context, newPlanet);
+          if (distance - radius > sun.initialSize * SunWidget.factor) {
+            Planet planet = Planet(
+              radius: radius,
+              color: color,
+              distance: distance,
+              rotationSpeed: (rotationSpeed * 1000000).toInt(),
+            );
+            PlanetWidget newPlanet = PlanetWidget(planet: planet);
+            Navigator.pop(context, newPlanet);
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text('Please correct distance, too small')));
+          }
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(

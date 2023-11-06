@@ -23,7 +23,7 @@ class _PlanetWidgetState extends State<PlanetWidget>
     controller.repeat(
         min: 0.0,
         max: 1.0,
-        period: Duration(seconds: widget.planet.rotationSpeed));
+        period: Duration(microseconds: widget.planet.rotationSpeed));
   }
 
   @override
