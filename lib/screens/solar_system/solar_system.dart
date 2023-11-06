@@ -16,6 +16,7 @@ class PlanetSystemScreen extends StatefulWidget {
 
 class _PlanetSystemState extends State<PlanetSystemScreen> {
   List<PlanetWidget> planets = [];
+  double factor = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +40,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         }
 
         planets = newPlanets;
-
-        SunWidget.factor *= scaleFactor;
+        factor *= scaleFactor;
       }
     }
     return Scaffold(
@@ -52,7 +52,7 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const SunWidget(),
+            SunWidget(factor: factor,),
             ...planets,
           ],
         ),

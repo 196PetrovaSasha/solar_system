@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class SunWidget extends StatelessWidget {
   final double initialSize = 70;
-  static double factor = 1;
 
-  const SunWidget({super.key});
+  double factor;
+
+  SunWidget({super.key, required this.factor});
 
   @override
   Widget build(BuildContext context) {

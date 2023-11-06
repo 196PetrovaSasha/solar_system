@@ -22,7 +22,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
 
   Color currentColor = Colors.amber;
   List<Color> currentColors = [Colors.yellow, Colors.green];
-  SunWidget sun = const SunWidget();
+  // SunWidget sun = const SunWidget();
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -98,19 +98,27 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           double distance = double.parse(_distanceController.text);
           double rotationSpeed = double.parse(_rotationSpeedController.text);
 
-          if (distance - radius > sun.initialSize * SunWidget.factor) {
-            Planet planet = Planet(
-              radius: radius,
-              color: color,
-              distance: distance,
-              rotationSpeed: (rotationSpeed * 1000000).toInt(),
-            );
-            PlanetWidget newPlanet = PlanetWidget(planet: planet);
-            Navigator.pop(context, newPlanet);
-          } else {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text('Please correct distance, too small')));
-          }
+          // if (distance - radius > sun.initialSize * SunWidget.factor) {
+          //   Planet planet = Planet(
+          //     radius: radius,
+          //     color: color,
+          //     distance: distance,
+          //     rotationSpeed: (rotationSpeed * 1000000).toInt(),
+          //   );
+          //   PlanetWidget newPlanet = PlanetWidget(planet: planet);
+          //   Navigator.pop(context, newPlanet);
+          // } else {
+          //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          //       content: Text('Please correct distance, too small')));
+          // }
+          Planet planet = Planet(
+            radius: radius,
+            color: color,
+            distance: distance,
+            rotationSpeed: (rotationSpeed * 1000000).toInt(),
+          );
+          PlanetWidget newPlanet = PlanetWidget(planet: planet);
+          Navigator.pop(context, newPlanet);
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('Please correct the errors')));
