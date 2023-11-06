@@ -37,7 +37,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           return 'Please enter radius';
         } else if (double.tryParse(value) == null ||
             double.parse(value) <= 0) {
-          return 'Radius must be a positive number';
+          return 'Radius must be a positive integer number';
         }
         return null;
       },
@@ -55,7 +55,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           return 'Please enter distance';
         } else if (double.tryParse(value) == null ||
             double.parse(value) <= 0) {
-          return 'Distance must be a positive number';
+          return 'Distance must be a positive integer number';
         }
         return null;
       },
@@ -74,7 +74,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
           return 'Please enter rotation speed';
         } else if (double.tryParse(value) == null ||
             double.parse(value) <= 0) {
-          return 'Rotation speed must be a positive integer';
+          return 'Rotation speed must be a positive double value';
         }
         return null;
       },
