@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:solar_system/screens/solar_system/sun_widget.dart';
 
 import '../../models/planet.dart';
 import '../solar_system/planet_widget.dart';
