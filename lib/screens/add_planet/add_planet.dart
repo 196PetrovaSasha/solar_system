@@ -92,14 +92,14 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
     return ElevatedButton(
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          double radius = double.parse(_radiusController.text);
+          double radius = double.parse(_radiusController.text) * 2;
           Color color = currentColor;
-          double distance = double.parse(_distanceController.text);
+          double distance = double.parse(_distanceController.text)  * 2;
           double rotationSpeed = double.parse(_rotationSpeedController.text);
 
-          if (distance - radius > widget.sunRad) {
+          if (distance - radius  > widget.sunRad * 2) {
             Planet planet = Planet(
-              radius: radius,
+              radius: radius ,
               color: color,
               distance: distance,
               rotationSpeed: (rotationSpeed * 1000000).toInt(),
