@@ -63,8 +63,8 @@ class _PlanetSystemState extends State<PlanetSystemScreen> {
             final PlanetWidget newPlanet = await Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const AddPlanetScreen(
-                        title: "",
+                  builder: (context) =>  AddPlanetScreen(
+                        title: "", sunRad: factor * 70,
                       )),
             );
             setState(() {
